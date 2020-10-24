@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/helpers.js","index.js"],"names":["myName","console","log"],"mappings":";;ACAA;;AAEAC,OAAO,CAACC,GAAR,CAAYF,eAAZ;;ADFO,IAAMA,MAAM,GAAG,SAAf","file":"js_module_cobra.e31bb0bc.js","sourceRoot":"..","sourcesContent":["export const myName = 'Michael';","import { myName } from './js/helpers';\r\n\r\nconsole.log(myName);"]}
