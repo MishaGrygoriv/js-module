@@ -1,3 +1,6 @@
-body {
-    background-color: red;
-}
+@import "./core/mixins";
+@import "./core/common";
+@import "./core/vars";
+@import "./core/main";
+@import "./core/first-section";
+@import "./core/second-section";

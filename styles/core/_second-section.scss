@@ -1,0 +1,57 @@
+$style: "second-section";
+.#{$style} {
+    background-color: $dark-color;
+    padding: 100px 0;
+    &__types {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    &__letter-s {
+        display: inline-block;
+        padding: 5px 5px;
+        border: 2px solid $yellow-color;
+        animation: glow 2500ms linear infinite 2000ms;
+    }
+    &__description {
+        &--second {
+            left: -255px;
+        }
+        &--third {
+            left: -262px;
+            top: -91px;
+        }
+        &--fourth {
+            left: -263px;
+            top: -75px;
+        }
+        &--fifth {
+            left: -260px;
+            top: -76px;
+        }
+        &--sixth {
+            left: -255px;
+            top: -75px;
+        }
+        &--seventh {
+            left: -255px;
+            top: -75px;
+        }
+        &--eighth {
+            left: -240px;
+            top: -60px;
+        }
+        &--ninth {
+            left: -255px;
+            top: -75px;
+        }
+        &--tenth {
+            left: -262px;
+            top: -75px;
+        }
+    }
+    @keyframes glow {
+        40% {
+            text-shadow: 0 0 10px $yellow-color;
+        }
+    }
+}

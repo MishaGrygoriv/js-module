@@ -1,0 +1,64 @@
+        $style: "first-section";
+        .#{$style} {
+            background-color: $dark-color;
+            padding: 100px 0;
+            position: relative;
+            svg {
+                position: absolute;
+                transform: rotate(180deg);
+                top: -16%;
+                left: -10%;
+            }
+            &__basic {
+                display: inline-block;
+                margin-right: 20px;
+            }
+            &__letter-j {
+                display: inline-block;
+                padding: 5px 10px;
+                border: 2px solid $yellow-color;
+                animation: glow 2500ms linear infinite 2000ms;
+            }
+            &__description {
+                &--first {
+                    left: -180px;
+                }
+                &--second {
+                    left: -240px;
+                }
+                &--third {
+                    left: -260px;
+                    top: -75px;
+                }
+                &--fourth {
+                    left: -240px;
+                }
+                &--fifth {
+                    left: -260px;
+                    top: -78px;
+                }
+                &--sixth {
+                    left: -240px;
+                }
+                &--seventh {
+                    left: -255px;
+                    top: -92px;
+                }
+                &--eighth {
+                    left: -257px;
+                    top: -78px;
+                }
+                &--ninth {
+                    left: -190px;
+                }
+                &--tenth {
+                    left: -262px;
+                    top: -78px;
+                }
+            }
+            @keyframes glow {
+                40% {
+                    text-shadow: 0 0 10px $yellow-color;
+                }
+            }
+        }

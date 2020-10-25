@@ -1,0 +1,65 @@
+$style: "main";
+.#{$style} {
+    &__title {
+        @include flex(center, center);
+        margin: auto;
+        margin-bottom: 70px;
+        @include text($large-size, 400, $yellow-color);
+        text-transform: uppercase;
+        max-width: 550px;
+        text-align: center;
+        box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+    }
+    &__col-wrapper {
+        @include flex(space-around, center);
+    }
+    &__list {
+        @include flex(center, center, column);
+    }
+    &__item {
+        @include flex(center, center);
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+        transition: visibility 2s ease-out;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__item:hover &__description {
+        display: block;
+    }
+    &__btn {
+        @include text($middle-size, 400, $yellow-color);
+        text-transform: uppercase;
+        outline: none;
+        border: 2px solid $orange-color;
+        box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+        background-color: inherit;
+        cursor: pointer;
+        height: 60px;
+        width: 100%;
+        padding: 0 80px;
+        border-radius: 10px;
+        @include flex(center, center);
+        transition: all 0.5s ease;
+        &:hover {
+            background-color: $orange-color;
+            box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+    &__description {
+        @include text($small-size, 400, $dark-color);
+        display: none;
+        position: absolute;
+        top: -59px;
+        left: -164px;
+        max-width: 370px;
+        text-align: center;
+        padding: 30px 75px;
+        background: #f3f3f3;
+        box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        transition: visibility 2s ease-out;
+    }
+}
