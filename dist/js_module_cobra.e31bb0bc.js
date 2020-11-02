@@ -121,13 +121,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 (function () {
   //Basic JavaScript
   //1.1 What's your name?
-  var firstSectionFirstBtn = document.getElementById("task 1.1");
+  var firstSectionFirstBtn = document.getElementById("task1.1");
   firstSectionFirstBtn.addEventListener("click", function () {
     var userName = prompt('Enter your Name, please');
     alert("Hello, ".concat(userName, "!"));
   }); //1.2 What does your Birth Year?
 
-  var firstSectionSecondBtn = document.getElementById("task 1.2");
+  var firstSectionSecondBtn = document.getElementById("task1.2");
   firstSectionSecondBtn.addEventListener("click", function () {
     var currentYear = 2020;
     var userYearBirth = Number(prompt('Enter your Year of Birth, please', 1992));
@@ -135,21 +135,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     alert("You are ".concat(yourAge));
   }); //1.3 What's the perimetr of a square?
 
-  var firstSectionThirdBtn = document.getElementById("task 1.3");
+  var firstSectionThirdBtn = document.getElementById("task1.3");
   firstSectionThirdBtn.addEventListener("click", function () {
     var lengthSquareSide = Number(prompt('Enter length of a square\'s side, please', 0));
     var perimeterSquare = lengthSquareSide * 4;
     alert("The perimeter of a square is ".concat(perimeterSquare));
   }); //1.4 What's area of a circle?
 
-  var firstSectionFourthBtn = document.getElementById("task 1.4");
+  var firstSectionFourthBtn = document.getElementById("task1.4");
   firstSectionFourthBtn.addEventListener("click", function () {
     var radiusCircle = Number(prompt('Enter radius of a circle, please', 0));
     var areaCircle = 3.14 * Math.pow(radiusCircle, 2);
     alert("The area of a circle is ".concat(areaCircle));
   }); //1.5 Which distance do you need to keep between cities in km?
 
-  var firstSectionFifthBtn = document.getElementById("task 1.5");
+  var firstSectionFifthBtn = document.getElementById("task1.5");
   firstSectionFifthBtn.addEventListener("click", function () {
     var distance = prompt('Enter distance (in km), please', 0);
     var duration = prompt('Enter duration (in hours)', 0);
@@ -157,7 +157,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     alert("You should drive ".concat(kmPerHour, " km/hour"));
   }); //1.6 Exchange Rate USD to EUR.
 
-  var firstSectionSixthBtn = document.getElementById("task 1.6");
+  var firstSectionSixthBtn = document.getElementById("task1.6");
   firstSectionSixthBtn.addEventListener("click", function () {
     var dollarAmount = Number(prompt('Enter the amount (in USA dollars), please', 0));
     var euroExchangeRate = 0.84;
@@ -165,14 +165,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     alert("You have ".concat(countEuro, " EUR"));
   }); //1.7 How many files up to 820MB can you upload to your memory stick?
 
-  var firstSectionSeventhBtn = document.getElementById("task 1.7");
+  var firstSectionSeventhBtn = document.getElementById("task1.7");
   firstSectionSeventhBtn.addEventListener("click", function () {
     var memoryStickCapacity = prompt('Enter your card capacity (in GB), please', 0);
     var countFiles = memoryStickCapacity / 0.820;
     alert("You can upload ".concat(countFiles, " files up to 820MB"));
   }); //1.8 How many chocolate bars can you buy?
 
-  var firstSectionEighthBtn = document.getElementById("task 1.8");
+  var firstSectionEighthBtn = document.getElementById("task1.8");
   firstSectionEighthBtn.addEventListener("click", function () {
     var amountOfMoney = prompt('Enter amount of your money, please', 0);
     var priceOfChocolate = prompt('Enter the price of chocolate, please', 0);
@@ -186,7 +186,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }); //1.9 Reverse your number.
 
-  var firstSectionNinthBtn = document.getElementById("task 1.9");
+  var firstSectionNinthBtn = document.getElementById("task1.9");
   firstSectionNinthBtn.addEventListener("click", function () {
     var number = Number(prompt('Enter three-digit numbers to reverse, please', 123));
     var reverse = 0;
@@ -200,7 +200,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     alert("Your numbers ".concat(reverse));
   }); //1.10 How much money will you get in 2 months?
 
-  var firstSectionTenthBtn = document.getElementById("task 1.10");
+  var firstSectionTenthBtn = document.getElementById("task1.10");
   firstSectionTenthBtn.addEventListener("click", function () {
     var depositSum = prompt('Enter your deposit sum, please', 0);
     var percentYearDeposit = 0.05;
@@ -211,7 +211,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   //Types JavaScript
   //2.1 How old are you?
 
-  var secondSectionFirstBtn = document.getElementById("task 2.1");
+  var secondSectionFirstBtn = document.getElementById("task2.1");
   secondSectionFirstBtn.addEventListener("click", function () {
     var userAge = Number(prompt('Enter your age, please', 28));
 
@@ -228,7 +228,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }); //2.2 Number Symbols (from 0 - 9).
 
-  var secondSectionSecondBtn = document.getElementById("task 2.2");
+  var secondSectionSecondBtn = document.getElementById("task2.2");
   secondSectionSecondBtn.addEventListener("click", function () {
     var numberSymbol = Number(prompt('Enter number from 0 - 9, please', 0));
 
@@ -279,13 +279,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }); //2.3 Three Digit Numbers
 
-  var secondSectionThirdBtn = document.getElementById("task 2.3");
+  var secondSectionThirdBtn = document.getElementById("task2.3");
   secondSectionThirdBtn.addEventListener("click", function () {
     var threeDigitNumbers = prompt('Enter three any numbers, please', 123);
-    threeDigitNumbers[0] == threeDigitNumbers[1] || threeDigitNumbers[1] == threeDigitNumbers[2] || threeDigitNumbers[2] == threeDigitNumbers[0] ? alert("found same numbers") : alert("no same numbers");
+    threeDigitNumbers[0] === threeDigitNumbers[1] || threeDigitNumbers[1] === threeDigitNumbers[2] || threeDigitNumbers[2] === threeDigitNumbers[0] ? alert("found same numbers") : alert("no same numbers");
   }); //2.4 Check Which Years are Leap Years!
 
-  var secondSectionFourthBtn = document.getElementById("task 2.4");
+  var secondSectionFourthBtn = document.getElementById("task2.4");
   secondSectionFourthBtn.addEventListener("click", function () {
     var leapYear = Number(prompt('Enter which year do you want to check, please', 2020));
 
@@ -296,28 +296,28 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }); //2.5 Check your number is a palindrome number or not?
 
-  var secondSectionFifthBtn = document.getElementById("task 2.5");
+  var secondSectionFifthBtn = document.getElementById("task2.5");
   secondSectionFifthBtn.addEventListener("click", function () {
     var palindromeNumber = prompt("Enter any five numbers, please", 12345);
     palindromeNumber[0] == palindromeNumber[4] && palindromeNumber[1] == palindromeNumber[3] ? alert("".concat(palindromeNumber, " is a palindromic number!")) : alert("".concat(palindromeNumber, " is not a palindromic number!"));
   }); //2.6 Convert USD to EUR, UAH or AZN.
 
-  var secondSectionSixthBtn = document.getElementById("task 2.6");
+  var secondSectionSixthBtn = document.getElementById("task2.6");
   secondSectionSixthBtn.addEventListener("click", function () {
     var amountInDollars = prompt("Enter amount is USD, please", 0);
     var currency = prompt("Enter number of required currency: EUR = 1; UAH = 2; AZN = 3");
 
     switch (currency) {
       case "1":
-        alert(amountInDollars * 0.8 + " " + "EUR");
+        alert("".concat(amountInDollars * 0.8, " EUR") + " ");
         break;
 
       case "2":
-        alert(amountInDollars * 28.29 + " " + "UAH");
+        alert("".concat(amountInDollars * 28.29, " UAH") + " ");
         break;
 
       case "3":
-        alert(amountInDollars * 1.7 + " " + "AZN");
+        alert("".concat(amountInDollars * 1.7, " AZN") + " ");
         break;
 
       default:
@@ -326,7 +326,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }); //2.7 Check what discount you can get from the purchase!
 
-  var secondSectionSeventhBtn = document.getElementById("task 2.7");
+  var secondSectionSeventhBtn = document.getElementById("task2.7");
   secondSectionSeventhBtn.addEventListener("click", function () {
     var amountOfMoney = Number(prompt('Enter the amount of purchases, please', 0));
 
@@ -343,7 +343,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }
   }); //2.8 Can a Circle fit in a Square?
 
-  var secondSectionEighthBtn = document.getElementById("task 2.8");
+  var secondSectionEighthBtn = document.getElementById("task2.8");
   secondSectionEighthBtn.addEventListener("click", function () {
     var circleLenght = Number(prompt("Enter lenght of a circle, please", 0));
     var squarePerimeter = Number(prompt("Enter perimeter of a square, please"));
@@ -352,7 +352,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     circleRadius < squareSide / 2 ? alert('Circle can fit in a Square') : alert('Circle can not fit in a Square');
   }); //2.9 Try to score maximum points by answering three questions.
 
-  var secondSectionNinthBtn = document.getElementById("task 2.9");
+  var secondSectionNinthBtn = document.getElementById("task2.9");
   secondSectionNinthBtn.addEventListener("click", function () {
     var firstQuestion = prompt('Which is the smallest continent in the world?', "Asia, Africa, Australia");
     var secondQuestion = prompt('How many weeks are there in one year?', "48, 64, 52");
@@ -374,7 +374,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     points >= 2 ? alert("Congratulations! you have got ".concat(points, " points.")) : alert("Unfortunately, you have't got any points.");
   }); //2.10 Write a date (year, month, day)!
 
-  var secondSectionTenthBtn = document.getElementById("task 2.10");
+  var secondSectionTenthBtn = document.getElementById("task2.10");
   secondSectionTenthBtn.addEventListener("click", function () {
     var date = new Date(prompt('Enter date in (yyyy-mm-dd) format'));
     date.setDate(date.getDate() + 1);
@@ -409,7 +409,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59760" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56004" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

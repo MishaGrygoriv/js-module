@@ -163,7 +163,7 @@
     const secondSectionThirdBtn = document.getElementById("task2.3");
     secondSectionThirdBtn.addEventListener("click", () => {
         const threeDigitNumbers = prompt('Enter three any numbers, please', 123);
-        threeDigitNumbers[0] == threeDigitNumbers[1] || threeDigitNumbers[1] == threeDigitNumbers[2] || threeDigitNumbers[2] == threeDigitNumbers[0] ?
+        threeDigitNumbers[0] === threeDigitNumbers[1] || threeDigitNumbers[1] === threeDigitNumbers[2] || threeDigitNumbers[2] === threeDigitNumbers[0] ?
             alert("found same numbers") : alert("no same numbers");
     });
 
@@ -196,13 +196,13 @@
         const currency = prompt("Enter number of required currency: EUR = 1; UAH = 2; AZN = 3");
         switch (currency) {
             case "1":
-                alert(amountInDollars * 0.8 + " " + "EUR");
+                alert(`${amountInDollars * 0.8} EUR` + " ");
                 break;
             case "2":
-                alert(amountInDollars * 28.29 + " " + "UAH");
+                alert(`${amountInDollars * 28.29} UAH` + " ");
                 break;
             case "3":
-                alert(amountInDollars * 1.7 + " " + "AZN");
+                alert(`${amountInDollars * 1.7} AZN` + " ");
                 break;
             default:
                 alert("Try Again!");
