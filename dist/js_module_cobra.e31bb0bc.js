@@ -118,269 +118,106 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-(function () {
-  //Basic JavaScript
-  //1.1 What's your name?
-  var firstSectionFirstBtn = document.getElementById("task1.1");
-  firstSectionFirstBtn.addEventListener("click", function () {
-    var userName = prompt('Enter your Name, please');
-    alert("Hello, ".concat(userName, "!"));
-  }); //1.2 What does your Birth Year?
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var firstSectionSecondBtn = document.getElementById("task1.2");
-  firstSectionSecondBtn.addEventListener("click", function () {
-    var currentYear = 2020;
-    var userYearBirth = Number(prompt('Enter your Year of Birth, please', 1992));
-    var yourAge = currentYear - userYearBirth;
-    alert("You are ".concat(yourAge));
-  }); //1.3 What's the perimetr of a square?
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-  var firstSectionThirdBtn = document.getElementById("task1.3");
-  firstSectionThirdBtn.addEventListener("click", function () {
-    var lengthSquareSide = Number(prompt('Enter length of a square\'s side, please', 0));
-    var perimeterSquare = lengthSquareSide * 4;
-    alert("The perimeter of a square is ".concat(perimeterSquare));
-  }); //1.4 What's area of a circle?
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  var firstSectionFourthBtn = document.getElementById("task1.4");
-  firstSectionFourthBtn.addEventListener("click", function () {
-    var radiusCircle = Number(prompt('Enter radius of a circle, please', 0));
-    var areaCircle = 3.14 * Math.pow(radiusCircle, 2);
-    alert("The area of a circle is ".concat(areaCircle));
-  }); //1.5 Which distance do you need to keep between cities in km?
+/////////////////////////////////////////////////////////////////////////////////
+// Dust Animation
+var c = init("canvas"),
+    w = canvas.width = window.innerWidth,
+    h = canvas.height = window.innerHeight; //initiation
 
-  var firstSectionFifthBtn = document.getElementById("task1.5");
-  firstSectionFifthBtn.addEventListener("click", function () {
-    var distance = prompt('Enter distance (in km), please', 0);
-    var duration = prompt('Enter duration (in hours)', 0);
-    var kmPerHour = distance / duration;
-    alert("You should drive ".concat(kmPerHour, " km/hour"));
-  }); //1.6 Exchange Rate USD to EUR.
+var firefly = /*#__PURE__*/function () {
+  function firefly() {
+    _classCallCheck(this, firefly);
 
-  var firstSectionSixthBtn = document.getElementById("task1.6");
-  firstSectionSixthBtn.addEventListener("click", function () {
-    var dollarAmount = Number(prompt('Enter the amount (in USA dollars), please', 0));
-    var euroExchangeRate = 0.84;
-    var countEuro = dollarAmount * euroExchangeRate;
-    alert("You have ".concat(countEuro, " EUR"));
-  }); //1.7 How many files up to 820MB can you upload to your memory stick?
+    this.x = Math.random() * w;
+    this.y = Math.random() * h;
+    this.s = Math.random() * 2;
+    this.ang = Math.random() * 2 * Math.PI;
+    this.v = this.s * this.s / 4;
+  }
 
-  var firstSectionSeventhBtn = document.getElementById("task1.7");
-  firstSectionSeventhBtn.addEventListener("click", function () {
-    var memoryStickCapacity = prompt('Enter your card capacity (in GB), please', 0);
-    var countFiles = memoryStickCapacity / 0.820;
-    alert("You can upload ".concat(countFiles, " files up to 820MB"));
-  }); //1.8 How many chocolate bars can you buy?
-
-  var firstSectionEighthBtn = document.getElementById("task1.8");
-  firstSectionEighthBtn.addEventListener("click", function () {
-    var amountOfMoney = prompt('Enter amount of your money, please', 0);
-    var priceOfChocolate = prompt('Enter the price of chocolate, please', 0);
-    var amountOfChocolate = amountOfMoney / priceOfChocolate;
-    var balanceOfMoney = amountOfMoney % priceOfChocolate;
-
-    if (amountOfChocolate > 1) {
-      alert("You can buy ".concat(parseInt(amountOfChocolate), " chocolates and your balance is ").concat(balanceOfMoney));
-    } else {
-      alert("You can buy nothing!");
+  _createClass(firefly, [{
+    key: "move",
+    value: function move() {
+      this.x += this.v * Math.cos(this.ang);
+      this.y += this.v * Math.sin(this.ang);
+      this.ang += Math.random() * 20 * Math.PI / 180 - 10 * Math.PI / 180;
     }
-  }); //1.9 Reverse your number.
-
-  var firstSectionNinthBtn = document.getElementById("task1.9");
-  firstSectionNinthBtn.addEventListener("click", function () {
-    var number = Number(prompt('Enter three-digit numbers to reverse, please', 123));
-    var reverse = 0;
-
-    while (number > 0) {
-      var x = number % 10;
-      reverse = reverse * 10 + x;
-      number = parseInt(number / 10);
+  }, {
+    key: "show",
+    value: function show() {
+      c.beginPath();
+      c.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
+      c.fillStyle = "#fddba3";
+      c.fill();
     }
+  }]);
 
-    alert("Your numbers ".concat(reverse));
-  }); //1.10 How much money will you get in 2 months?
+  return firefly;
+}();
 
-  var firstSectionTenthBtn = document.getElementById("task1.10");
-  firstSectionTenthBtn.addEventListener("click", function () {
-    var depositSum = prompt('Enter your deposit sum, please', 0);
-    var percentYearDeposit = 0.05;
-    var sumForTwoMonths = depositSum * percentYearDeposit * 60 / 365;
-    alert("You'll get ".concat(sumForTwoMonths, " in 2 months"));
-  }); //Basic JavaScript End
-  /////////////////////////////////////////////////////////////////////////////////
-  //Types JavaScript
-  //2.1 How old are you?
+var f = [];
 
-  var secondSectionFirstBtn = document.getElementById("task2.1");
-  secondSectionFirstBtn.addEventListener("click", function () {
-    var userAge = Number(prompt('Enter your age, please', 28));
-
-    if (0 <= userAge && userAge < 2) {
-      alert("you're a baby");
-    } else if (2 <= userAge && userAge < 12) {
-      alert("you're a child");
-    } else if (12 <= userAge && userAge < 18) {
-      alert("you're a teenager");
-    } else if (18 <= userAge && userAge < 60) {
-      alert("you're an adult");
-    } else if (userAge >= 60) {
-      alert("you're a pensioner");
+function draw() {
+  if (f.length < 100) {
+    for (var j = 0; j < 10; j++) {
+      f.push(new firefly());
     }
-  }); //2.2 Number Symbols (from 0 - 9).
+  } //animation
 
-  var secondSectionSecondBtn = document.getElementById("task2.2");
-  secondSectionSecondBtn.addEventListener("click", function () {
-    var numberSymbol = Number(prompt('Enter number from 0 - 9, please', 0));
 
-    switch (true) {
-      case numberSymbol == 1:
-        alert("your symbol is \"!\"");
-        break;
+  for (var i = 0; i < f.length; i++) {
+    f[i].move();
+    f[i].show();
 
-      case numberSymbol == 2:
-        alert("your symbol is \"@\"");
-        break;
-
-      case numberSymbol == 3:
-        alert("your symbol is \"#\"");
-        break;
-
-      case numberSymbol == 4:
-        alert("your symbol is \"$\"");
-        break;
-
-      case numberSymbol == 5:
-        alert("your symbol is \"%\"");
-        break;
-
-      case numberSymbol == 6:
-        alert("your symbol is \"^\"");
-        break;
-
-      case numberSymbol == 7:
-        alert("your symbol is \"&\"");
-        break;
-
-      case numberSymbol == 8:
-        alert("your symbol is \"*\"");
-        break;
-
-      case numberSymbol == 9:
-        alert("your symbol is \"(\"");
-        break;
-
-      case numberSymbol == 0:
-        alert("your symbol is \")\"");
-        break;
-
-      default:
-        alert("try again!");
-        break;
+    if (f[i].x < 0 || f[i].x > w || f[i].y < 0 || f[i].y > h) {
+      f.splice(i, 1);
     }
-  }); //2.3 Three Digit Numbers
+  }
+}
 
-  var secondSectionThirdBtn = document.getElementById("task2.3");
-  secondSectionThirdBtn.addEventListener("click", function () {
-    var threeDigitNumbers = prompt('Enter three any numbers, please', 123);
-    threeDigitNumbers[0] === threeDigitNumbers[1] || threeDigitNumbers[1] === threeDigitNumbers[2] || threeDigitNumbers[2] === threeDigitNumbers[0] ? alert("found same numbers") : alert("no same numbers");
-  }); //2.4 Check Which Years are Leap Years!
+var mouse = {};
+var last_mouse = {};
+canvas.addEventListener("mousemove", function (e) {
+  last_mouse.x = mouse.x;
+  last_mouse.y = mouse.y;
+  mouse.x = e.pageX - this.offsetLeft;
+  mouse.y = e.pageY - this.offsetTop;
+}, false);
 
-  var secondSectionFourthBtn = document.getElementById("task2.4");
-  secondSectionFourthBtn.addEventListener("click", function () {
-    var leapYear = Number(prompt('Enter which year do you want to check, please', 2020));
+function init(elemid) {
+  var canvas = document.getElementById(elemid),
+      c = canvas.getContext("2d"),
+      w = canvas.width = window.innerWidth,
+      h = canvas.height = window.innerHeight;
+  c.fillStyle = "rgba(30,30,30,1)";
+  c.fillRect(0, 0, w, h);
+  return c;
+}
 
-    if (leapYear % 400 === 0 || leapYear % 4 === 0 && leapYear % 100 != 0) {
-      alert("yes, ".concat(leapYear, " it's a Leap Year!"));
-    } else {
-      alert("no, ".concat(leapYear, " it's not a Leap Year!"));
-    }
-  }); //2.5 Check your number is a palindrome number or not?
+window.requestAnimFrame = function () {
+  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+    window.setTimeout(callback);
+  };
+};
 
-  var secondSectionFifthBtn = document.getElementById("task2.5");
-  secondSectionFifthBtn.addEventListener("click", function () {
-    var palindromeNumber = prompt("Enter any five numbers, please", 12345);
-    palindromeNumber[0] == palindromeNumber[4] && palindromeNumber[1] == palindromeNumber[3] ? alert("".concat(palindromeNumber, " is a palindromic number!")) : alert("".concat(palindromeNumber, " is not a palindromic number!"));
-  }); //2.6 Convert USD to EUR, UAH or AZN.
+function loop() {
+  window.requestAnimFrame(loop);
+  c.clearRect(0, 0, w, h);
+  draw();
+}
 
-  var secondSectionSixthBtn = document.getElementById("task2.6");
-  secondSectionSixthBtn.addEventListener("click", function () {
-    var amountInDollars = prompt("Enter amount is USD, please", 0);
-    var currency = prompt("Enter number of required currency: EUR = 1; UAH = 2; AZN = 3");
-
-    switch (currency) {
-      case "1":
-        alert("".concat(amountInDollars * 0.8, " EUR") + " ");
-        break;
-
-      case "2":
-        alert("".concat(amountInDollars * 28.29, " UAH") + " ");
-        break;
-
-      case "3":
-        alert("".concat(amountInDollars * 1.7, " AZN") + " ");
-        break;
-
-      default:
-        alert("Try Again!");
-        break;
-    }
-  }); //2.7 Check what discount you can get from the purchase!
-
-  var secondSectionSeventhBtn = document.getElementById("task2.7");
-  secondSectionSeventhBtn.addEventListener("click", function () {
-    var amountOfMoney = Number(prompt('Enter the amount of purchases, please', 0));
-
-    if (amountOfMoney >= 0 && amountOfMoney < 200) {
-      alert('sorry, no discount for you!');
-    } else if (amountOfMoney >= 200 && amountOfMoney <= 300) {
-      alert(amountOfMoney - amountOfMoney * 0.03 + ' ' + 'with discount');
-    } else if (amountOfMoney > 300 && amountOfMoney <= 500) {
-      alert(amountOfMoney - amountOfMoney * 0.05 + ' ' + 'with discount');
-    } else if (amountOfMoney > 500) {
-      alert(amountOfMoney - amountOfMoney * 0.05 + ' ' + 'with discount');
-    } else {
-      alert('Try Again!');
-    }
-  }); //2.8 Can a Circle fit in a Square?
-
-  var secondSectionEighthBtn = document.getElementById("task2.8");
-  secondSectionEighthBtn.addEventListener("click", function () {
-    var circleLenght = Number(prompt("Enter lenght of a circle, please", 0));
-    var squarePerimeter = Number(prompt("Enter perimeter of a square, please"));
-    var circleRadius = circleLenght / (2 * 3.1415);
-    var squareSide = squarePerimeter / 4;
-    circleRadius < squareSide / 2 ? alert('Circle can fit in a Square') : alert('Circle can not fit in a Square');
-  }); //2.9 Try to score maximum points by answering three questions.
-
-  var secondSectionNinthBtn = document.getElementById("task2.9");
-  secondSectionNinthBtn.addEventListener("click", function () {
-    var firstQuestion = prompt('Which is the smallest continent in the world?', "Asia, Africa, Australia");
-    var secondQuestion = prompt('How many weeks are there in one year?', "48, 64, 52");
-    var thirdQuestion = prompt('How many months of the year have 31 days?', "7, 5, 9");
-    var points = 0;
-
-    if (firstQuestion == "Australia") {
-      points += 2;
-    }
-
-    if (secondQuestion == 52) {
-      points += 2;
-    }
-
-    if (thirdQuestion == 7) {
-      points += 2;
-    }
-
-    points >= 2 ? alert("Congratulations! you have got ".concat(points, " points.")) : alert("Unfortunately, you have't got any points.");
-  }); //2.10 Write a date (year, month, day)!
-
-  var secondSectionTenthBtn = document.getElementById("task2.10");
-  secondSectionTenthBtn.addEventListener("click", function () {
-    var date = new Date(prompt('Enter date in (yyyy-mm-dd) format'));
-    date.setDate(date.getDate() + 1);
-    alert("tomorrow is ".concat(date));
-  }); //Types JavaScript End
-})();
+window.addEventListener("resize", function () {
+  w = canvas.width = window.innerWidth, h = canvas.height = window.innerHeight;
+  loop();
+});
+loop();
+setInterval(loop, 1000 / 60);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -409,7 +246,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56004" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61566" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

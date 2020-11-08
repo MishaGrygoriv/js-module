@@ -1,44 +1,49 @@
-$style: "second-section";
+$style: "third-section";
 .#{$style} {
     padding: 100px 0;
     &__title {
-        max-width: 250px;
+        max-width: 270px;
     }
     &__description {
+        &--first {
+            left: -262px;
+            top: -75px;
+        }
         &--second {
-            left: -255px;
+            left: -261px;
+            top: -75px;
         }
         &--third {
             left: -262px;
-            top: -91px;
+            top: -75px;
         }
         &--fourth {
             left: -263px;
-            top: -75px;
+            top: -91px;
         }
         &--fifth {
             left: -260px;
-            top: -76px;
+            top: -107px;
         }
         &--sixth {
             left: -255px;
-            top: -75px;
+            top: -91px;
         }
         &--seventh {
             left: -255px;
-            top: -75px;
+            top: -91px;
         }
         &--eighth {
-            left: -240px;
+            left: -230px;
             top: -60px;
         }
         &--ninth {
             left: -255px;
-            top: -75px;
+            top: -91px;
         }
         &--tenth {
             left: -262px;
-            top: -75px;
+            top: -91px;
         }
     }
 }

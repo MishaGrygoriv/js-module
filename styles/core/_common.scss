@@ -32,3 +32,8 @@ img {
 ul {
     list-style: none;
 }
+
+canvas {
+    filter: blur(1px);
+    position: fixed;
+}

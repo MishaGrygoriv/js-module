@@ -1,36 +1,41 @@
-$style: "second-section";
+$style: "fourth-section";
 .#{$style} {
     padding: 100px 0;
     &__title {
-        max-width: 250px;
+        max-width: 400px;
     }
     &__description {
+        &--first {
+            left: -258px;
+            top: -122px;
+        }
         &--second {
-            left: -255px;
+            left: -260px;
+            top: -90px;
         }
         &--third {
             left: -262px;
-            top: -91px;
+            top: -75px;
         }
         &--fourth {
-            left: -263px;
-            top: -75px;
+            left: -262px;
+            top: -90px;
         }
         &--fifth {
             left: -260px;
-            top: -76px;
+            top: -75px;
         }
         &--sixth {
             left: -255px;
-            top: -75px;
+            top: -107px;
         }
         &--seventh {
             left: -255px;
-            top: -75px;
+            top: -107px;
         }
         &--eighth {
-            left: -240px;
-            top: -60px;
+            left: -255px;
+            top: -91px;
         }
         &--ninth {
             left: -255px;

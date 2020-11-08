@@ -10,18 +10,49 @@
 <script src="/style.ff1c4cab.js"></script></head>
 
 <body>
+    <canvas id="canvas"></canvas>
+
+    <!--Navigation-->
+    <nav class="nav">
+        <div class="nav__container container">
+            <ul class="nav__list">
+                <li class="nav__item nav__lefter">
+                    <a href="#types" class="nav__link"></a>
+                    <h2 class="nav__text text">Types</h2>
+                </li>
+                <li class="nav__item nav__left">
+                    <a href="#loops" class="nav__link"></a>
+                    <h2 class="nav__text text">Loops</h2>
+                </li>
+                <li class="nav__item nav__center">
+                    <a href="#" class="explainer">
+                        <span class="nav__hover-me">
+                            <span class="nav__fast-flicker">H</span>ove<span class="nav__flicker">r </span>m<span class="nav__flicker-last">e</span></span>
+                    </a>
+                    <h2 class="nav__text text">Basic</h2>
+                </li>
+                <li class="nav__item nav__right">
+                    <a href="#functions" class="nav__link"></a>
+                    <h2 class="nav__text text">Functions</h2>
+                </li>
+                <li class="nav__item nav__righter">
+                    <a href="#objects" class="nav__link"></a>
+                    <h2 class="nav__text text">Objects</h2>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Navigation End-->
+
     <!--Main-->
     <main class="main">
 
         <!--First Section-->
         <section class="first-section">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffd700" fill-opacity="1" d="M0,96L120,122.7C240,149,480,203,720,197.3C960,192,1200,128,1320,96L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
-              </svg>
             <div class="first-section__container container">
                 <h2 class="first-section__title main__title">
-                    <span class="first-section__basic">Basic</span>
-                    <span class="first-section__letter-j">J</span>avaScript</h2>
+                    Basic Java
+                    <span class="first-section__shiny main__shiny">S</span>cript</h2>
                 <div class="first-section__col-wrapper main__col-wrapper">
                     <div class="first-section__col-first main__col-first">
                         <ul class="first-section__list main__list">
@@ -77,10 +108,9 @@
         <!--First Section End-->
 
         <!--Second Section-->
-        <section class="second-section">
+        <section id="types" class="second-section">
             <div class="second-section__container container">
-                <h2 class="second-section__title main__title">Types Java
-                    <span class="second-section__letter-s">S</span>cript</h2>
+                <h2 class="second-section__title main__title">Type<span class="second-section__shiny main__shiny">S</span></h2>
                 <div class="second-section__col-wrapper main__col-wrapper">
                     <div class="second-section__col-first main__col-first">
                         <ul class="second-section__list main__list">
@@ -134,9 +164,158 @@
             </div>
         </section>
         <!--Second Section End-->
+
+        <!--Third Section-->
+        <section id="loops" class="third-section">
+            <div class="third-section__container container">
+                <h2 class="third-section__title main__title">Loop<span class="third-section__shiny main__shiny">s</span></h2>
+                <div class="third-section__col-wrapper main__col-wrapper">
+                    <div class="third-section__col-first main__col-first">
+                        <ul class="third-section__list main__list">
+                            <li class="third-section__item main__item">
+                                <button id="task3.1" class="third-section__btn main__btn">Task 1</button>
+                                <p class="third-section__description third-section__description--first main__description">Calculate the sum of all numbers in a given range.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.2" class="third-section__btn main__btn">Task 2</button>
+                                <p class="third-section__description third-section__description--second main__description">Find the greatest common factor.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.3" class="third-section__btn main__btn">Task 3</button>
+                                <p class="third-section__description third-section__description--third main__description">Write the number to get all divisors of this number.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.4" class="third-section__btn main__btn">Task 4</button>
+                                <p class="third-section__description third-section__description--fourth main__description">Write any numbers to determine the number of digits.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.5" class="third-section__btn main__btn">Task 5</button>
+                                <p class="third-section__description third-section__description--fifth main__description">Write 10 any numbers to find out how many positive, negative, zero, even and odd numbers.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="third-section__col-second main__col-second">
+                        <ul class="third-section__list main__list">
+                            <li class="third-section__item main__item">
+                                <button id="task3.6" class="third-section__btn main__btn">Task 6</button>
+                                <p class="third-section__description third-section__description--sixth main__description">Write 2 numbers and a math operator to solve the math problem.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.7" class="third-section__btn main__btn">Task 7</button>
+                                <p class="third-section__description third-section__description--seventh main__description">Write any numbers and also write how many numbers to move forward.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.8" class="third-section__btn main__btn">Task 8</button>
+                                <p class="third-section__description third-section__description--eighth main__description">Check what day is it today.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.9" class="third-section__btn main__btn">Task 9</button>
+                                <p class="third-section__description third-section__description--ninth main__description">Click to get the multiplication table for all numbers from 2 to 9.</p>
+                            </li>
+                            <li class="third-section__item main__item">
+                                <button id="task3.10" class="third-section__btn main__btn">Task 10</button>
+                                <p class="third-section__description third-section__description--tenth main__description">Let's play the game "Guess the number". Choose a number from 0 to 100.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Third Section End-->
+
+        <!--Fourth Section-->
+        <section id="functions" class="fourth-section">
+            <div class="fourth-section__container container">
+                <h2 class="fourth-section__title main__title">
+                    Function<span class="fourth-section__shiny main__shiny">S</span>
+                </h2>
+                <div class="fourth-section__col-wrapper main__col-wrapper">
+                    <div class="fourth-section__col-first main__col-first">
+                        <ul class="fourth-section__list main__list">
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.1" class="fourth-section__btn main__btn">Task 1</button>
+                                <p class="fourth-section__description fourth-section__description--first main__description">Write 2 numbers to get -1 if the first is less than the second; 1 - if the first is greater than the second; and 0 - if the numbers are equal.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.2" class="fourth-section__btn main__btn">Task 2</button>
+                                <p class="fourth-section__description fourth-section__description--second main__description">Write a number to find out the factorial of a given number.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.3" class="fourth-section__btn main__btn">Task 3</button>
+                                <p class="fourth-section__description fourth-section__description--third main__description">Write three separate numbers to get them in one number.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.4" class="fourth-section__btn main__btn">Task 4</button>
+                                <p class="fourth-section__description fourth-section__description--fourth main__description">Write down the length and width of the rectangle to find out its area.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.5" class="fourth-section__btn main__btn">Task 5</button>
+                                <p class="fourth-section__description fourth-section__description--fifth main__description">Write the number to find out if this number is perfect.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fourth-section__col-second main__col-second">
+                        <ul class="fourth-section__list main__list">
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.6" class="fourth-section__btn main__btn">Task 6</button>
+                                <p class="fourth-section__description fourth-section__description--sixth main__description">Write the minimum and maximum values for the range to check if there are perfect numbers.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.7" class="fourth-section__btn main__btn">Task 7</button>
+                                <p class="fourth-section__description fourth-section__description--seventh main__description">Write the time (hours, minutes, seconds) to see it on the screen in the format "hh: mm: ss".</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.8" class="fourth-section__btn main__btn">Task 8</button>
+                                <p class="fourth-section__description fourth-section__description--eighth main__description">Write hours, minutes and seconds to check how much seconds.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.9" class="fourth-section__btn main__btn">Task 9</button>
+                                <p class="fourth-section__description fourth-section__description--ninth main__description">Try to score maximum points by answering three questions.</p>
+                            </li>
+                            <li class="fourth-section__item main__item">
+                                <button id="task4.10" class="fourth-section__btn main__btn">Task 10</button>
+                                <p class="fourth-section__description fourth-section__description--tenth main__description">Write two dates to check the difference between it.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Fourth Section End-->
+
+        <!--Fifth Section-->
+        <section id="objects" class="fifth-section">
+            <div class="fifth-section__container container">
+                <h2 class="fifth-section__title main__title">
+                    Object<span class="fifth-section__shiny main__shiny">S</span>
+                </h2>
+                <div class="fifth-section__col">
+                    <ul class="fifth-section__list">
+                        <li class="fifth-section__item main__item main__item--fifth-section">
+                            <button id="task5.1" class="fifth-section__btn main__btn">Task 1</button>
+                            <p class="fifth-section__description fifth-section__description--first main__description">...</p>
+                        </li>
+                        <li class="fifth-section__item main__item main__item--fifth-section">
+                            <button id="task5.2" class="fifth-section__btn main__btn">Task 2</button>
+                            <p class="fifth-section__description fifth-section__description--second main__description">...</p>
+                        </li>
+                        <li class="fifth-section__item main__item main__item--fifth-section">
+                            <button id="task5.3" class="fifth-section__btn main__btn">Task 3</button>
+                            <p class="fifth-section__description fifth-section__description--third main__description">...</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--Fifth Section End-->
     </main>
     <!--Main End-->
     <script src="/js_module_cobra.e31bb0bc.js"></script>
+    <script src="/basic.520b471e.js"></script>
+    <script src="/types.cfbb25fb.js"></script>
+    <script src="/loops.254cceda.js"></script>
+    <script src="/functions.8a1c1db8.js"></script>
+    <script src="/objects.bd68e2e0.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,270 @@
+$style: "nav";
+.#{$style} {
+    background-color: rgba($dark-color, 0.5);
+    padding: 50px 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    &__list {
+        display: flex;
+        perspective: 10px;
+        transform: perspective(300px) rotateX(20deg);
+        will-change: perspective;
+        perspective-origin: center center;
+        transition: all 1.3s ease;
+        justify-content: center;
+        transform-style: preserve-3d;
+    }
+    &__list:hover {
+        perspective: 1000px;
+        transition: all 1.3s ease;
+        transform: perspective(10000px) rotateX(0deg);
+        .text {
+            opacity: 1;
+        }
+        li {
+            opacity: 1;
+            transition-delay: 0s;
+        }
+        .explainer {
+            opacity: 0;
+        }
+    }
+    &__list:hover &__item {
+        min-height: 150px;
+    }
+    &__item {
+        max-width: 200px;
+        width: 100%;
+        min-height: 50px;
+        transform-style: preserve-3d;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        box-shadow: 0 0 15px 2px rgba(228, 213, 10, .6);
+        opacity: 0;
+        transition: all .3s ease;
+        transition-delay: 1s;
+        position: relative;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #262733;
+        cursor: pointer;
+        background-blend-mode: color-burn;
+        &:hover {
+            box-shadow: 0 0 30px 10px rgba(228, 213, 10, 0.8);
+            background-color: rgba(228, 213, 10, 0.8);
+        }
+    }
+    &__link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    &__text {
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all .3s ease;
+        bottom: -5px;
+        left: 5px;
+        position: absolute;
+        will-change: transform;
+        color: $dark-color;
+        text-shadow: 0 0 10px rgba(255, 255, 255, .9);
+    }
+    &__item:hover &__text {
+        color: $yellow-color;
+    }
+    &__lefter {
+        background-position-y: -20px;
+        transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
+        background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/39-Cloud_Functions-CSS-512.png);
+        &:hover {
+            background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/39_-_Cloud_Functions_-_Colour_-_CSS-512.png);
+        }
+    }
+    &__left {
+        background-position-y: -20px;
+        transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
+        background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/16-Cloud_Functions-Information-512.png);
+        &:hover {
+            background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/16_-_Cloud_Functions_-_Colour_-_Information-512.png);
+        }
+    }
+    &__center {
+        opacity: 1;
+        background-image: url(https://cdn1.iconfinder.com/data/icons/web-tech-misc/80/web-js-javascript-512.png);
+    }
+    &__right {
+        background-position-y: -20px;
+        transform: translateX(30px) translateZ(-25px) rotateY(5deg);
+        background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/24-Cloud_Functions-HTML-512.png);
+        &:hover {
+            background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/24_-_Cloud_Functions_-_Colour_-_HTML-512.png);
+        }
+    }
+    &__righter {
+        background-position-y: -20px;
+        transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+        background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/37-Cloud_Functions-See-512.png);
+        &:hover {
+            background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/37_-_Cloud_Functions_-_Colour_-_See-512.png);
+        }
+    }
+    .explainer {
+        font-weight: 700;
+        font-size: 2rem;
+        color: $yellow-color;
+        transition: all .6s ease;
+        width: 100%;
+        height: 100%;
+        background-color: #262733;
+        border-radius: 10px;
+        box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            text-shadow: 0 0 10px rgba(255, 255, 255, .9);
+        }
+    }
+    &__hover-me {
+        animation: shine 2s forwards, flicker 3s infinite;
+    }
+    &__flicker {
+        animation: shine 2s forwards, blink 3s 2s infinite;
+    }
+    &__flicker-last {
+        animation: shine 3s forwards, blink 4s 2s infinite;
+    }
+    &__fast-flicker {
+        animation: shine 2s forwards, blink 10s 1s infinite;
+    }
+    @keyframes blink {
+        0%,
+        22%,
+        36%,
+        75% {
+            color: #ffe92f;
+            text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ffe6ff, -0.2rem 0.1rem 1rem #ffe6ff, 0.2rem 0.1rem 1rem #ffe6ff, 0 -0.5rem -1rem #ffe6ff, 0 -0.5rem -1rem #ffe6ff;
+        }
+        28%,
+        33% {
+            color: #262733;
+            text-shadow: none;
+        }
+        82%,
+        97% {
+            color: #ffe92f;
+            text-shadow: none;
+        }
+    }
+    @keyframes shine {
+        0% {
+            color: #ffe6ff;
+            text-shadow: none;
+        }
+        100% {
+            color: #ffe92f;
+            text-shadow: 0 0 -10rem #ffe6ff, 0 0 -10rem #ffe92f, -0.2rem 0.1rem -10rem #ffe6ff, 0.2rem 0.1rem -10rem #ffe6ff, 0 -0.5rem -20rem #ffe6ff, 0 0.5rem -30rem #ffe6ff;
+        }
+    }
+    @keyframes flicker {
+        from {
+            opacity: 1;
+        }
+        4% {
+            opacity: 0.9;
+        }
+        6% {
+            opacity: 0.85;
+        }
+        8% {
+            opacity: 0.95;
+        }
+        10% {
+            opacity: 0.9;
+        }
+        11% {
+            opacity: 0.922;
+        }
+        12% {
+            opacity: 0.9;
+        }
+        14% {
+            opacity: 0.95;
+        }
+        16% {
+            opacity: 0.98;
+        }
+        17% {
+            opacity: 0.9;
+        }
+        19% {
+            opacity: 0.93;
+        }
+        20% {
+            opacity: 0.99;
+        }
+        24% {
+            opacity: 1;
+        }
+        26% {
+            opacity: 0.94;
+        }
+        28% {
+            opacity: 0.98;
+        }
+        37% {
+            opacity: 0.93;
+        }
+        38% {
+            opacity: 0.5;
+        }
+        39% {
+            opacity: 0.96;
+        }
+        42% {
+            opacity: 1;
+        }
+        44% {
+            opacity: 0.97;
+        }
+        46% {
+            opacity: 0.94;
+        }
+        56% {
+            opacity: 0.9;
+        }
+        58% {
+            opacity: 0.9;
+        }
+        60% {
+            opacity: 0.99;
+        }
+        68% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 0.9;
+        }
+        72% {
+            opacity: 0.95;
+        }
+        93% {
+            opacity: 0.93;
+        }
+        95% {
+            opacity: 0.95;
+        }
+        97% {
+            opacity: 0.93;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

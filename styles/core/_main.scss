@@ -1,5 +1,7 @@
 $style: "main";
 .#{$style} {
+    background-color: $dark-color;
+    padding: 200px 0 0;
     &__title {
         @include flex(center, center);
         margin: auto;
@@ -9,6 +11,12 @@ $style: "main";
         max-width: 550px;
         text-align: center;
         box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+    }
+    &__shiny {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 2px solid $yellow-color;
+        animation: glow 2500ms linear infinite 2000ms;
     }
     &__col-wrapper {
         @include flex(space-around, center);
@@ -24,6 +32,11 @@ $style: "main";
         transition: visibility 2s ease-out;
         &:last-child {
             margin-bottom: 0;
+        }
+        &--fifth-section {
+            display: flex;
+            margin-bottom: 0;
+            width: auto;
         }
     }
     &__item:hover &__description {
@@ -61,5 +74,10 @@ $style: "main";
         box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         transition: visibility 2s ease-out;
+    }
+    @keyframes glow {
+        40% {
+            text-shadow: 0 0 10px $yellow-color;
+        }
     }
 }
