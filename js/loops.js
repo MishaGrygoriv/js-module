@@ -1,7 +1,5 @@
 //Loops
-
-(function(loops) {
-
+export const loops = () => {
     //3.1 Calculate the sum of all numbers in a given range.
     //Подсчитать сумму всех чисел в заданном пользователем диапазоне.
     const thirdSectionFirstBtn = document.getElementById("task3.1");
@@ -65,24 +63,25 @@
         // alert(number.length);
     });
 
-    //3.5 (WARNING!!!) Write 10 any numbers to find out how many positive, negative, zero, even and odd numbers.
+    //3.5 Write 10 any numbers to find out how many positive, negative, zero, even and odd numbers.
     //Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
     const thirdSectionFifthBtn = document.getElementById("task3.5");
     thirdSectionFifthBtn.addEventListener("click", () => {
-        const numbers = Number(prompt('Enter any 10 numbers, please', 1234567891));
         let negativeNumber = 0;
         let positiveNumber = 0;
         let zeroNumber = 0;
         let evenNumber = 0;
         let oddNumber = 0;
-        for (let i = 0; i < 10; i++) {
-            if (numbers < 0) {
-                negativeNumber += 1;
-            } else if (numbers > 0) {
-                positiveNumber += 1;
-            } else if (numbers === 0) {
+        for (let i = 1; i <= 10; i++) {
+            let numbers = Number(prompt(`Enter any 10 numbers, please! Example: number ${i}`));
+            if (numbers === 0) {
                 zeroNumber += 1;
-            } else if (numbers % 2 === 0) {
+            } else if (numbers < 0) {
+                negativeNumber += 1;
+            } else {
+                positiveNumber += 1;
+            }
+            if (numbers % 2 === 0) {
                 evenNumber += 1;
             } else {
                 oddNumber += 1;
@@ -233,5 +232,5 @@
             }
         }
     });
-})();
+};
 //Loops End

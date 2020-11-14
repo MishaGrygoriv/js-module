@@ -1,4 +1,30 @@
 /////////////////////////////////////////////////////////////////////////////////
+//Imports
+import {
+    basic
+} from "./js/basic";
+basic();
+
+import {
+    types
+} from "./js/types";
+types();
+
+import {
+    loops
+} from "./js/loops";
+loops();
+
+import {
+    functions
+} from "./js/functions";
+functions();
+
+import {
+    objects
+} from "./js/objects";
+objects();
+/////////////////////////////////////////////////////////////////////////////////
 // Dust Animation
 
 let c = init("canvas"),

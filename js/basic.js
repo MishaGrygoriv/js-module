@@ -1,7 +1,5 @@
 //Basic JavaScript
-
-(function(basicJavaScript) {
-
+export const basic = () => {
     //1.1 What's your name?
     //Запросите у пользователя его имя и выведите в ответ: «Привет, его имя!».
     const firstSectionFirstBtn = document.getElementById("task1.1");
@@ -106,5 +104,5 @@
         let sumForTwoMonths = ((depositSum * percentYearDeposit * 60) / 365);
         alert(`You'll get ${sumForTwoMonths} in 2 months`);
     });
-})();
+};
 //Basic JavaScript End

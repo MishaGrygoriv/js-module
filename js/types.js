@@ -1,7 +1,5 @@
 //Types
-
-(function(types) {
-
+export const types = () => {
     //2.1 How old are you?
     //Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
     const secondSectionFirstBtn = document.getElementById("task2.1");
@@ -174,5 +172,5 @@
         date.setDate(date.getDate() + 1);
         alert(`tomorrow is ${date}`);
     });
-})();
+};
 //Types End

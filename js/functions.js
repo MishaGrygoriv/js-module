@@ -1,13 +1,11 @@
 //Functions
-
-(function(functions) {
-
+export const functions = () => {
     //4.1 Write 2 numbers to get -1 if the first is less than the second; 1 - if the first is greater than the second; and 0 - if the numbers are equal.
     //Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.
     const fourthSectionFirstBtn = document.getElementById("task4.1");
     fourthSectionFirstBtn.addEventListener("click", () => {
-        const firstNumber = prompt('Enter the first number, please', 2);
-        const secondNumber = prompt('Enter the second number, please', 4);
+        const firstNumber = prompt('Enter the first number, please', "2");
+        const secondNumber = prompt('Enter the second number, please', "4");
 
         function comparison(a, b) {
             if (Number(a) < Number(b))
@@ -24,7 +22,7 @@
     //Написать функцию, которая вычисляет факториал переданного ей числа.
     const fourthSectionSecondBtn = document.getElementById("task4.2");
     fourthSectionSecondBtn.addEventListener("click", () => {
-        const number = Number(prompt('Enter any number', 5))
+        const number = Number(prompt('Enter any number', "5"))
 
         function factorial(number) {
             return (number != 1) ? number * factorial(number - 1) : 1;
@@ -36,9 +34,9 @@
     //Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.
     const fourthSectionThirdBtn = document.getElementById("task4.3");
     fourthSectionThirdBtn.addEventListener("click", () => {
-        const firstNumber = prompt('Enter the first number, please', 2);
-        const secondNumber = prompt('Enter the second number', 3);
-        const thirdNumber = prompt('Enter the third number, please', 4);
+        const firstNumber = prompt('Enter the first number, please', "2");
+        const secondNumber = prompt('Enter the second number', "3");
+        const thirdNumber = prompt('Enter the third number, please', "4");
 
         function joinNumbers(a, b, c) {
             const join = [a, b, c].join("");
@@ -51,8 +49,8 @@
     //Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.
     const fourthSectionFourthBtn = document.getElementById("task4.4");
     fourthSectionFourthBtn.addEventListener("click", () => {
-        const rectangleLength = Number(prompt("Enter rectangle length", 5));
-        const rectangleWidth = Number(prompt("Enter rectangle width", 8));
+        const rectangleLength = Number(prompt("Enter rectangle length", "5"));
+        const rectangleWidth = Number(prompt("Enter rectangle width", "8"));
 
         function area(a, b) {
             let size = 0;
@@ -78,7 +76,7 @@
     //Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.
     const fourthSectionFifthBtn = document.getElementById("task4.5");
     fourthSectionFifthBtn.addEventListener("click", () => {
-        const number = Number(prompt('Enter any number, please', 5));
+        const number = Number(prompt('Enter any number, please', "5"));
 
         function perfectNumber(a) {
             let result = 0;
@@ -99,8 +97,8 @@
     //Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет. 
     const fourthSectionSixthBtn = document.getElementById("task4.6");
     fourthSectionSixthBtn.addEventListener("click", () => {
-        const firstNumber = Number(prompt('Enter the minimum value, please', 4));
-        const secondNumber = Number(prompt('Enter the maximum value, please', 8));
+        const firstNumber = Number(prompt('Enter the minimum value, please', "4"));
+        const secondNumber = Number(prompt('Enter the maximum value, please', "8"));
 
         function perfectNumberInRange(a, b) {
             let arrResult = new Array();
@@ -122,9 +120,9 @@
     //Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
     const fourthSectionSeventhBtn = document.getElementById("task4.7");
     fourthSectionSeventhBtn.addEventListener("click", () => {
-        const hours = Number(prompt('Enter hours, please', 7));
-        const minutes = Number(prompt('Enter minutes, please', 25));
-        const seconds = Number(prompt('Enter seconds, please', 15));
+        const hours = Number(prompt('Enter hours, please', "7"));
+        const minutes = Number(prompt('Enter minutes, please', "25"));
+        const seconds = Number(prompt('Enter seconds, please', "15"));
 
         function SetTime(hh, mm = 0, ss = 0) {
             let date = new Date();
@@ -145,9 +143,9 @@
     //Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
     const fourthSectionEighthBtn = document.getElementById("task4.8");
     fourthSectionEighthBtn.addEventListener("click", () => {
-        const hours = Number(prompt('Enter hours, please', 18));
-        const minutes = Number(prompt('Enter minutes, please', 32));
-        const seconds = Number(prompt('Enter seconds, please', 04));
+        const hours = Number(prompt('Enter hours, please', "18"));
+        const minutes = Number(prompt('Enter minutes, please', "32"));
+        const seconds = Number(prompt('Enter seconds, please', "04"));
 
         function ToSeconds(hh, mm = 0, ss = 0) {
             return 3600 * hh + 60 * mm + ss;
@@ -197,5 +195,5 @@
         }
         alert(secondsToHours(newDate));
     });
-})();
+};
 //Functions End

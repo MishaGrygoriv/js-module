@@ -117,34 +117,47 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/objects.js":[function(require,module,exports) {
-//Objects
-(function (objects) {
-  //5.1 english
-  //Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость), и следующие функции для работы с этим объектом:
-  //Функция для вывода на экран информации об автомобиле;
-  //Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
-  var firstSectionFirstBtn = document.getElementById("task1.1");
-  firstSectionFirstBtn.addEventListener("click", function () {}); //5.2 english
-  //Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: 
-  //Функция сложения 2-х объектов-дробей;
-  //Функция вычитания 2-х объектов-дробей;
-  //Функция умножения 2-х объектов-дробей;
-  //Функция деления 2-х объектов-дробей;
-  //Функция сокращения объекта-дроби.
-
-  var firstSectionSecondBtn = document.getElementById("task1.2");
-  firstSectionSecondBtn.addEventListener("click", function () {}); //5.3 english
-  //Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом: 
-  //Функция вывода времени на экран;
-  //Функция изменения времени на переданное количество секунд;
-  //Функция изменения времени на переданное количество минут;
-  //Функция изменения времени на переданное количество часов. 
-  //Учтите, что в последних 3-х функциях, при изменении одной части времени, может измениться и другая. Например, если ко времени «20:30:45» добавить 30 секунд, то должно получиться «20:31:15», а не «20:30:75».
-
-  var firstSectionThirdBtn = document.getElementById("task1.3");
-  firstSectionThirdBtn.addEventListener("click", function () {});
-})(); //Objects End
+})({"tabs.js":[function(require,module,exports) {
+$(document).ready(function () {
+  $('ul.tabs li').click(function () {
+    var tab_id = $(this).attr('data-tab');
+    $('ul.tabs li').removeClass('current');
+    $('.tab-content').removeClass('current');
+    $(this).addClass('current');
+    $("#" + tab_id).addClass('current');
+  });
+});
+var progressBarOptions = {
+  startAngle: -1.55,
+  size: 70,
+  value: 0.78,
+  fill: {
+    gradient: ['#00d4be', '#1ae77f']
+  }
+};
+$('.circle').circleProgress(progressBarOptions).on('circle-animation-progress', function (event, progress, stepValue) {
+  $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2));
+});
+$('.tabs').on('click', function () {
+  $('#circle-a').circleProgress({
+    value: 0.78,
+    fill: {
+      gradient: ['#00d4be', '#1ae77f']
+    }
+  });
+  $('#circle-b').circleProgress({
+    value: 0.55,
+    fill: {
+      gradient: ['#00d4be', '#1ae77f']
+    }
+  });
+  $('#circle-c').circleProgress({
+    value: 0.97,
+    fill: {
+      gradient: ['#00d4be', '#1ae77f']
+    }
+  });
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -173,7 +186,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61566" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55296" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -349,5 +362,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/objects.js"], null)
-//# sourceMappingURL=/objects.bd68e2e0.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","tabs.js"], null)
+//# sourceMappingURL=/tabs.9b37d588.js.map
