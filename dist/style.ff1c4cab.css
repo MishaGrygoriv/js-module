@@ -76,10 +76,10 @@ canvas {
   opacity: 0;
 }
 .nav__list:hover .nav__item {
-  min-height: 150px;
+  min-height: 100px;
 }
 .nav__item {
-  max-width: 200px;
+  max-width: 100px;
   width: 100%;
   min-height: 50px;
   transform-style: preserve-3d;
@@ -109,6 +109,7 @@ canvas {
 .nav__text {
   transform: translateY(30px);
   opacity: 0;
+  font-size: 20px;
   transition: all 0.3s ease;
   bottom: -5px;
   left: 5px;
@@ -120,45 +121,68 @@ canvas {
 .nav__item:hover .nav__text {
   color: #ffe92f;
 }
-.nav__lefter {
-  background-position-y: -20px;
+.nav__left-third-item {
+  background-position-y: -5px;
+  transform: translateX(-90px) translateZ(-75px) rotateY(-10deg);
+  background-size: 85px;
+  background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/43-Cloud_Functions-Print-512.png);
+}
+.nav__left-third-item:hover {
+  background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/43_-_Cloud_Functions_-_Colour_-_Print-512.png);
+}
+.nav__left-second-item {
+  background-position-y: -5px;
   transform: translateX(-60px) translateZ(-50px) rotateY(-10deg);
+  background-size: 85px;
   background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/39-Cloud_Functions-CSS-512.png);
 }
-.nav__lefter:hover {
+.nav__left-second-item:hover {
   background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/39_-_Cloud_Functions_-_Colour_-_CSS-512.png);
 }
-.nav__left {
-  background-position-y: -20px;
+.nav__left-first-item {
+  background-position-y: -5px;
   transform: translateX(-30px) translateZ(-25px) rotateY(-5deg);
+  background-size: 85px;
   background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/16-Cloud_Functions-Information-512.png);
 }
-.nav__left:hover {
+.nav__left-first-item:hover {
   background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/16_-_Cloud_Functions_-_Colour_-_Information-512.png);
 }
 .nav__center {
   opacity: 1;
   background-image: url(https://cdn1.iconfinder.com/data/icons/web-tech-misc/80/web-js-javascript-512.png);
+  background-size: 85px;
 }
-.nav__right {
-  background-position-y: -20px;
+.nav__right-first-item {
+  background-position-y: -5px;
   transform: translateX(30px) translateZ(-25px) rotateY(5deg);
+  background-size: 85px;
   background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/24-Cloud_Functions-HTML-512.png);
 }
-.nav__right:hover {
+.nav__right-first-item:hover {
   background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/24_-_Cloud_Functions_-_Colour_-_HTML-512.png);
 }
-.nav__righter {
-  background-position-y: -20px;
+.nav__right-second-item {
+  background-position-y: -5px;
   transform: translateX(60px) translateZ(-50px) rotateY(10deg);
+  background-size: 85px;
   background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/37-Cloud_Functions-See-512.png);
 }
-.nav__righter:hover {
+.nav__right-second-item:hover {
   background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/37_-_Cloud_Functions_-_Colour_-_See-512.png);
+}
+.nav__right-third-item {
+  background-position-y: -5px;
+  transform: translateX(90px) translateZ(-75px) rotateY(10deg);
+  background-size: 85px;
+  background-image: url(https://cdn0.iconfinder.com/data/icons/cloud-functions-outline-collection/60/45-Cloud_Functions-Copy-512.png);
+}
+.nav__right-third-item:hover {
+  background-image: url(https://cdn2.iconfinder.com/data/icons/cloud-functions-colour-collection/60/45_-_Cloud_Functions_-_Colour_-_Copy-512.png);
 }
 .nav .explainer {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 18px;
   color: #ffe92f;
   transition: all 0.6s ease;
   width: 100%;
@@ -598,6 +622,33 @@ canvas {
   margin-bottom: 100px;
 }
 .fifth-section__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.fifth-section__description--first {
+  left: -258px;
+  top: -92px;
+}
+.fifth-section__description--second {
+  left: -260px;
+  top: -76px;
+}
+.fifth-section__description--third {
+  left: -262px;
+  top: -92px;
+}
+
+.sixth-section {
+  padding: 100px 0;
+}
+.sixth-section__title {
+  max-width: 320px;
+  margin-bottom: 100px;
+}
+.sixth-section__list {
   display: flex;
   flex-direction: row;
   justify-content: space-around;

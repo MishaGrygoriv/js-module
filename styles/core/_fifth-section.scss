@@ -8,4 +8,18 @@ $style: "fifth-section";
     &__list {
         @include flex(space-around, center, row);
     }
+    &__description {
+        &--first {
+            left: -258px;
+            top: -92px;
+        }
+        &--second {
+            left: -260px;
+            top: -76px;
+        }
+        &--third {
+            left: -262px;
+            top: -92px;
+        }
+    }
 }

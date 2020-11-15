@@ -928,12 +928,39 @@ exports.objects = void 0;
 
 //Objects
 var objects = function objects() {
-  //5.1 english
+  //5.1 Enter the distance of the route in km to know how many hours your trip will take.
   //Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость), и следующие функции для работы с этим объектом:
   //Функция для вывода на экран информации об автомобиле;
   //Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
-  var firstSectionFirstBtn = document.getElementById("task1.1");
-  firstSectionFirstBtn.addEventListener("click", function () {}); //5.2 english
+  var firstSectionFirstBtn = document.getElementById("task5.1");
+  firstSectionFirstBtn.addEventListener("click", function () {
+    var carInfo = {
+      manufacturer: "BMW",
+      model: "X6",
+      modelYear: "2019",
+      averageSpeed: "100",
+      bodyColor: "Black"
+    };
+
+    function showInfo() {
+      var info = ["Car Info:\n              Manufacturer: ".concat(carInfo.manufacturer, " \n              Model: ").concat(carInfo.model, "\n              Model Year: ").concat(carInfo.modelYear, "\n              Average Speed: ").concat(carInfo.averageSpeed, "\n              Body Color: ").concat(carInfo.bodyColor)];
+      return info;
+    }
+
+    alert(showInfo());
+    var distance = Number(prompt("Enter the distance of your route in km, please", 100));
+
+    var roadTime = function roadTime(a) {
+      var distanceTime = a / carInfo.averageSpeed;
+      alert("You need ".concat(distanceTime, " hour(s) to overcome the distance"));
+      var breakTime = Math.floor(distanceTime / 4);
+      alert("".concat(breakTime, " time(s) you need to take a break for 1 hour"));
+      var totalTime = distanceTime + breakTime + ' hour(s) will take your trip!';
+      return totalTime;
+    };
+
+    alert(roadTime(distance));
+  }); //5.2 Enter 2 numerator numbers and 2 denominator numbers.
   //Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: 
   //Функция сложения 2-х объектов-дробей;
   //Функция вычитания 2-х объектов-дробей;
@@ -941,8 +968,69 @@ var objects = function objects() {
   //Функция деления 2-х объектов-дробей;
   //Функция сокращения объекта-дроби.
 
-  var firstSectionSecondBtn = document.getElementById("task1.2");
-  firstSectionSecondBtn.addEventListener("click", function () {}); //5.3 english
+  var firstSectionSecondBtn = document.getElementById("task5.2");
+  firstSectionSecondBtn.addEventListener("click", function () {
+    var firstNumerator = +prompt("enter numerator please", 4);
+    var firstDenominator = +prompt("enter denominator, please", 12);
+    var secondNumerator = +prompt("enter numerator please", 14);
+    var secondDenominator = +prompt("enter denominator, please", 22);
+    var firstFraction = {
+      firstNumerator: firstNumerator,
+      firstDenominator: firstDenominator
+    };
+    var secondFraction = {
+      secondNumerator: secondNumerator,
+      secondDenominator: secondDenominator
+    };
+
+    function lessDividerOfTwoNumbers(x, y) {
+      if (typeof x !== "number" || typeof y !== "number") return false;
+      return !x || !y ? 0 : Math.abs(x * y / biggerDividerOfTwoNumbers(x, y));
+    }
+
+    function biggerDividerOfTwoNumbers(x, y) {
+      x = Math.abs(x);
+      y = Math.abs(y);
+
+      while (y) {
+        var t = y;
+        y = x % y;
+        x = t;
+      }
+
+      return x;
+    }
+
+    var commonDenom = lessDividerOfTwoNumbers(firstFraction.firstDenominator, secondFraction.secondDenominator);
+
+    function plusFraction() {
+      var resultPlus = commonDenom / firstFraction.firstDenominator * firstFraction.firstNumerator + commonDenom / secondFraction.secondDenominator * secondFraction.secondNumerator;
+      return resultPlus;
+    }
+
+    alert("Plus fraction = ".concat(plusFraction(), ";"));
+
+    function minusFraction() {
+      var resultMinus = commonDenom / firstFraction.firstDenominator * firstFraction.firstNumerator - commonDenom / secondFraction.secondDenominator * secondFraction.secondNumerator;
+      return resultMinus;
+    }
+
+    alert("Minus fraction = ".concat(minusFraction(), ";"));
+
+    function multiplicationFraction() {
+      var result = firstFraction.firstNumerator * secondFraction.secondNumerator / (firstFraction.firstDenominator * secondFraction.secondDenominator);
+      return result;
+    }
+
+    alert("Multiplication Fraction = ".concat(multiplicationFraction(), ";"));
+
+    function divisionFraction() {
+      var result = firstFraction.firstNumerator * secondFraction.secondDenominator / (firstFraction.firstDenominator * secondFraction.secondNumerator);
+      return result;
+    }
+
+    alert("Division Fraction = ".concat(divisionFraction(), ";"));
+  }); //5.3 Enter how many seconds, minutes, and hours you want to add to your time.
   //Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом: 
   //Функция вывода времени на экран;
   //Функция изменения времени на переданное количество секунд;
@@ -950,12 +1038,116 @@ var objects = function objects() {
   //Функция изменения времени на переданное количество часов. 
   //Учтите, что в последних 3-х функциях, при изменении одной части времени, может измениться и другая. Например, если ко времени «20:30:45» добавить 30 секунд, то должно получиться «20:31:15», а не «20:30:75».
 
-  var firstSectionThirdBtn = document.getElementById("task1.3");
-  firstSectionThirdBtn.addEventListener("click", function () {});
+  var firstSectionThirdBtn = document.getElementById("task5.3");
+  firstSectionThirdBtn.addEventListener("click", function () {
+    var time = {
+      hours: 11,
+      minutes: 25,
+      seconds: 30
+    };
+
+    function setTime() {
+      var newTime = new Date();
+      newTime.setHours(time.hours, time.minutes, time.seconds);
+      return newTime.toLocaleString(navigator.language, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    }
+
+    alert(setTime());
+    var seconds = Number(prompt("How many seconds do you want to add?", 30));
+
+    function addSeconds() {
+      var newTime = new Date();
+      newTime.setHours(time.hours, time.minutes, time.seconds + seconds);
+      return newTime.toLocaleString(navigator.language, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    }
+
+    alert(addSeconds());
+    var minutes = Number(prompt("How many minutes do you want to add?", 30));
+
+    function addMinutes() {
+      var newTime = new Date();
+      newTime.setHours(time.hours, time.minutes + minutes, time.seconds + seconds);
+      return newTime.toLocaleString(navigator.language, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    }
+
+    alert(addMinutes());
+    var hours = Number(prompt("How many hours do you want to add?", 2));
+
+    function addHours() {
+      var newTime = new Date();
+      newTime.setHours(time.hours + hours, time.minutes + minutes, time.seconds + seconds);
+      return newTime.toLocaleString(navigator.language, {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+    }
+
+    alert(addHours());
+  });
 }; //Objects End
 
 
 exports.objects = objects;
+},{}],"js/arrays.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.arrays = void 0;
+
+//Objects
+var arrays = function arrays() {
+  //6.1 english
+  //Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость), и следующие функции для работы с этим объектом:
+  //Функция для вывода на экран информации об автомобиле;
+  //Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью. Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
+  var firstSectionFirstBtn = document.getElementById("task6.1");
+  firstSectionFirstBtn.addEventListener("click", function () {}); //6.2 english
+  //Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом: 
+  //Функция сложения 2-х объектов-дробей;
+  //Функция вычитания 2-х объектов-дробей;
+  //Функция умножения 2-х объектов-дробей;
+  //Функция деления 2-х объектов-дробей;
+  //Функция сокращения объекта-дроби.
+
+  var firstSectionSecondBtn = document.getElementById("task6.2");
+  firstSectionSecondBtn.addEventListener("click", function () {}); //6.3 english
+  //Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом: 
+  //Функция вывода времени на экран;
+  //Функция изменения времени на переданное количество секунд;
+  //Функция изменения времени на переданное количество минут;
+  //Функция изменения времени на переданное количество часов. 
+  //Учтите, что в последних 3-х функциях, при изменении одной части времени, может измениться и другая. Например, если ко времени «20:30:45» добавить 30 секунд, то должно получиться «20:31:15», а не «20:30:75».
+
+  var firstSectionThirdBtn = document.getElementById("task6.3");
+  firstSectionThirdBtn.addEventListener("click", function () {}); //6.3 english
+  //Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом: 
+  //Функция вывода времени на экран;
+  //Функция изменения времени на переданное количество секунд;
+  //Функция изменения времени на переданное количество минут;
+  //Функция изменения времени на переданное количество часов. 
+  //Учтите, что в последних 3-х функциях, при изменении одной части времени, может измениться и другая. Например, если ко времени «20:30:45» добавить 30 секунд, то должно получиться «20:31:15», а не «20:30:75».
+
+  var firstSectionFourthBtn = document.getElementById("task6.4");
+  firstSectionFourthBtn.addEventListener("click", function () {});
+}; //Objects End
+
+
+exports.arrays = arrays;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -969,6 +1161,8 @@ var _functions = require("./js/functions");
 
 var _objects = require("./js/objects");
 
+var _arrays = require("./js/arrays");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -979,7 +1173,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 (0, _types.types)();
 (0, _loops.loops)();
 (0, _functions.functions)();
-(0, _objects.objects)(); /////////////////////////////////////////////////////////////////////////////////
+(0, _objects.objects)();
+(0, _arrays.arrays)(); /////////////////////////////////////////////////////////////////////////////////
 // Dust Animation
 
 var c = init("canvas"),
@@ -1074,7 +1269,7 @@ window.addEventListener("resize", function () {
 });
 loop();
 setInterval(loop, 1000 / 60);
-},{"./js/basic":"js/basic.js","./js/types":"js/types.js","./js/loops":"js/loops.js","./js/functions":"js/functions.js","./js/objects":"js/objects.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./js/basic":"js/basic.js","./js/types":"js/types.js","./js/loops":"js/loops.js","./js/functions":"js/functions.js","./js/objects":"js/objects.js","./js/arrays":"js/arrays.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1102,7 +1297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55296" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58881" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

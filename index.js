@@ -24,6 +24,11 @@ import {
     objects
 } from "./js/objects";
 objects();
+
+import {
+    arrays
+} from "./js/arrays";
+arrays();
 /////////////////////////////////////////////////////////////////////////////////
 // Dust Animation
 
