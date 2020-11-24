@@ -1,4 +1,4 @@
-$style: "sixth-section";
+$style: "seventh-section";
 .#{$style} {
     padding: 100px 0;
     &__title {
@@ -10,20 +10,16 @@ $style: "sixth-section";
     }
     &__description {
         &--first {
-            left: -140px;
-            top: -60px;
+            left: -258px;
+            top: -92px;
         }
         &--second {
-            left: -138px;
-            top: -60px;
+            left: -90px;
+            top: -76px;
         }
         &--third {
             left: -262px;
-            top: -75px;
-        }
-        &--fourth {
-            left: -262px;
-            top: -75px;
+            top: -76px;
         }
     }
 }

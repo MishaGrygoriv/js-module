@@ -6,7 +6,7 @@
     "scripts": {
         "serve": "parcel index.html --open",
         "dev": "parcel index.html --open",
-        "dev:all": "parcel index.html tabs.html --open",
+        "dev:all": "parcel index.html tabs.html ajax.html --open",
         "start": "parcel index.html --open",
         "build": "parcel build index.html tabs.html --no-source-maps --no-cache"
     },
@@ -14,7 +14,11 @@
         "cssnano": "^4.1.10",
         "parcel-bundler": "^1.12.4",
         "parcel-plugin-clean-easy": "^1.0.2",
-        "sass": "^1.27.0"
+        "sass": "^1.27.0",
+        "babel-core": "^6.0.20",
+        "babel-polyfill": "^6.0.16",
+        "babel-preset-es2015": "^6.0.15",
+        "babel-preset-stage-0": "^6.0.15"
     },
     "parcelCleanPaths": [
         "dist",

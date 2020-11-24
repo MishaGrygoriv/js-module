@@ -29,102 +29,121 @@ import {
     arrays
 } from "./js/arrays";
 arrays();
+
+import {
+    classes
+} from "./js/classes";
+classes();
+
 /////////////////////////////////////////////////////////////////////////////////
-// Dust Animation
-
-let c = init("canvas"),
-    w = (canvas.width = window.innerWidth),
-    h = (canvas.height = window.innerHeight);
-//initiation
-
-class firefly {
-    constructor() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.s = Math.random() * 2;
-        this.ang = Math.random() * 2 * Math.PI;
-        this.v = this.s * this.s / 4;
-    }
-    move() {
-        this.x += this.v * Math.cos(this.ang);
-        this.y += this.v * Math.sin(this.ang);
-        this.ang += Math.random() * 20 * Math.PI / 180 - 10 * Math.PI / 180;
-    }
-    show() {
-        c.beginPath();
-        c.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
-        c.fillStyle = "#fddba3";
-        c.fill();
-    }
-}
-
-let f = [];
-
-function draw() {
-    if (f.length < 100) {
-        for (let j = 0; j < 10; j++) {
-            f.push(new firefly());
+// Animation
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 355,
+            "density": {
+                "enable": true,
+                "value_area": 789.1476416322727
+            }
+        },
+        "color": {
+            "value": "#ffffff"
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.48927153781200905,
+            "random": false,
+            "anim": {
+                "enable": true,
+                "speed": 0.2,
+                "opacity_min": 0,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 2,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 2,
+                "size_min": 0,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 0.2,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
         }
-    }
-    //animation
-    for (let i = 0; i < f.length; i++) {
-        f[i].move();
-        f[i].show();
-        if (f[i].x < 0 || f[i].x > w || f[i].y < 0 || f[i].y > h) {
-            f.splice(i, 1);
-        }
-    }
-}
-
-let mouse = {};
-let last_mouse = {};
-
-canvas.addEventListener(
-    "mousemove",
-    function(e) {
-        last_mouse.x = mouse.x;
-        last_mouse.y = mouse.y;
-
-        mouse.x = e.pageX - this.offsetLeft;
-        mouse.y = e.pageY - this.offsetTop;
     },
-    false
-);
-
-function init(elemid) {
-    let canvas = document.getElementById(elemid),
-        c = canvas.getContext("2d"),
-        w = (canvas.width = window.innerWidth),
-        h = (canvas.height = window.innerHeight);
-    c.fillStyle = "rgba(30,30,30,1)";
-    c.fillRect(0, 0, w, h);
-    return c;
-}
-
-window.requestAnimFrame = (function() {
-    return (
-        window.requestAnimationFrame ||
-        window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame ||
-        window.oRequestAnimationFrame ||
-        window.msRequestAnimationFrame ||
-        function(callback) {
-            window.setTimeout(callback);
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "bubble"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 83.91608391608392,
+                "size": 1,
+                "duration": 3,
+                "opacity": 1,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
         }
-    );
+    },
+    "retina_detect": true
 });
-
-function loop() {
-    window.requestAnimFrame(loop);
-    c.clearRect(0, 0, w, h);
-    draw();
-}
-
-window.addEventListener("resize", function() {
-    (w = canvas.width = window.innerWidth),
-    (h = canvas.height = window.innerHeight);
-    loop();
-});
-
-loop();
-setInterval(loop, 1000 / 60);

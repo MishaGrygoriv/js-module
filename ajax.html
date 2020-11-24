@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax Movie</title>
+    <link rel="shortcut icon" href="./img/js.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="./styles/ajax/ajax.scss" />
+</head>
+
+<body>
+    <section class="section">
+        <div class="uk-container section__header">
+            <div class="section__header-container">
+                <div class="section__header-col-right">
+                    <img class="section__img-logo" src="./img/ajax/onward-logo.png" alt="logo" />
+                    <p class="section__header-text"></p>
+                </div>
+                <div class="section__col-left">
+                    <div class="section__rating-wrapper">
+                        <ul class="section__star-list">
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAMAAACTbPdTAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAilBMVEX+zA/+zA/+zA/+zA/+zA/9zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/+zA/9zA////+TkoX8AAAAK3RSTlMAdw4Z9YGW8RQPMlr5pUEeAhXS+F8h2/5vGND7XWzdnA3JukaC8DoDrhGAQmMqFwAAAAFiS0dELc3aQT0AAAAHdElNRQfkCxgTMCawVxNyAAAAXklEQVQI12NgAANGJgYEYGZhReKxabNzQJmcXNw82tq8fPwCDAyCQtowICzCwCAqBuWIS4BUSkqBOdIyEI2yYJ4c1Bh5bR2QQgUIT1FbSVlFVVsNzFHXANGaWtwMDABVoQnd7SYf8wAAAABJRU5ErkJggg=="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAQAAAAOu8/qAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkCxgTMRqGI160AAAAj0lEQVQY022OOw5BYRBGD2pEQkIjob+JKHUaeyAKC5Do1DexBktQ621ComUTtxEUjuK/+D2+KeZxvswM8oqKy6gjKk092/qH6mbq+hMVbTt0o+rViX2rAc28+KuDDcSF9y9wtPO8NfUWgb3N+I1ThOZhVgSgTJe3eiEFlFAgY8WIHZDkFhHHptby1QO3lkQeBc6k66mEATUAAAAASUVORK5CYII="
+                  />
+                </svg>
+                            </li>
+                            <li class="section__star-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="11px">
+                  <image
+                    x="0px"
+                    y="0px"
+                    width="13px"
+                    height="11px"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAALCAQAAAAOu8/qAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkCxgTMRqGI160AAAAj0lEQVQY022OOw5BYRBGD2pEQkIjob+JKHUaeyAKC5Do1DexBktQ621ComUTtxEUjuK/+D2+KeZxvswM8oqKy6gjKk092/qH6mbq+hMVbTt0o+rViX2rAc28+KuDDcSF9y9wtPO8NfUWgb3N+I1ThOZhVgSgTJe3eiEFlFAgY8WIHZDkFhHHptby1QO3lkQeBc6k66mEATUAAAAASUVORK5CYII="
+                  />
+                </svg>
+                            </li>
+                        </ul>
+                        <div class="section__rating">
+                            <span class="section__rating-value">8.2<span class="section__max-rating-value">/10</span></span>
+                        </div>
+                    </div>
+                    <a href="#" class="section__header-btn">Play trailer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js"></script>
+    <script src="/js/ajax/index.js"></script>
+</body>
+
+</html>
