@@ -1,54 +1,203 @@
-$style: "section";
-.#{$style} {
-    padding: 100px 0;
-    &__header {
-        background: url('/img/ajax/onward-image.jpg') no-repeat center;
-        background-size: cover;
-        padding: 0;
-    }
-    &__header-container {
-        @include flex(space-between,
-        stretch);
-        padding: 20px 0 30px 7px;
-    }
-    &__img-logo {
+    $style: "section";
+    .#{$style} {
+        padding: 50px 0;
+        &__header {
+            background: url('/img/ajax/onward-image.jpg') no-repeat center;
+            background-size: cover;
+            padding: 0;
+            border-top: 25px solid rgba($section-bg-color, 0.6);
+            border-radius: 10px;
+            &--second {
+                background: url('/img/ajax/fantasy-island.jpg') no-repeat center;
+            }
+            &--third {
+                background: url('/img/ajax/project-power.jpg') no-repeat center;
+            }
+            &--fourth {
+                background: url('/img/ajax/call.jpg') no-repeat center;
+            }
+        }
+        &__header-container {
+            @include flex(space-between,
+            stretch);
+            padding: 20px 0 76px 50px;
+        }
+        /*&__img-logo {
         max-width: 500px;
         width: 100%;
-    }
-    &__header-col-right {
-        @include flex(center,
-        center);
-    }
-    &__header-col-left {
-        @include flex(center,
-        center);
-    }
-    &__rating-wrapper {}
-    &__star-list {
-        @include flex(center,
-        center,
-        row);
-        padding: 0;
-        margin: 0;
-    }
-    &__star-item {
-        margin-right: 2px;
-        &:last-child {
-            margin-right: 0;
+    }*/
+        &__header-col-left {
+            @include flex(flex-start,
+            flex-start,
+            column);
+            padding-top: 120px;
+        }
+        &__header-year {
+            @include text($middle-size,
+            300,
+            $white-color);
+            display: block;
+        }
+        &__header-subtitle {
+            @include text($large-size,
+            400,
+            $white-color);
+            margin: 0;
+        }
+        &__header-title {
+            @include text($header-title-size,
+            700,
+            $white-color);
+            margin: 0;
+        }
+        &__header-text {
+            @include text($middle-size,
+            300,
+            $white-color);
+            margin: 0;
+        }
+        &__header-col-right {
+            display: flex;
+            flex-direction: column;
+            max-width: 200px;
+            width: 100%;
+        }
+        &__star-list {
+            @include flex(flex-start,
+            flex-start,
+            row);
+            padding: 0;
+            margin: 0;
+        }
+        &__star-item {
+            margin-right: 2px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &__rating {
+            @include flex(center,
+            center);
+        }
+        &__rating-value {
+            @include text($large-size,
+            400,
+            $yellow-color);
+        }
+        &__max-rating-value {
+            @include text($middle-size,
+            400,
+            $white-color);
+        }
+        &__header-btn-wrapper {
+            @include flex(flex-end,
+            flex-end);
+        }
+        &__header-btn {
+            max-width: 160px;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba($section-bg-color, 0.6);
+            @include text($middle-size,
+            300,
+            $white-color);
+            &:hover {
+                text-decoration: none;
+                color: $white-color;
+            }
+        }
+        &__main-container {
+            @include flex(stretch,
+            stretch,
+            row);
+            background-color: $bg-color;
+            border-bottom: 25px solid rgba($section-bg-color, 0.5);
+            border-radius: 0 0 10px 10px;
+        }
+        &__main-col-left {
+            padding: 20px 10px 20px 0;
+            max-width: 200px;
+            width: 100%;
+            box-shadow: 12px 3px 10px -6px black;
+        }
+        &__form {
+            @include flex(center,
+            center);
+            max-width: 200px;
+            width: 100%;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        &__input {
+            max-width: 140px;
+            width: 100%;
+            padding: 10px;
+            background-color: transparent;
+            outline: none;
+            border: 2px solid $section-bg-color;
+            margin-right: 5px;
+            box-shadow: inset 0 0 10px #000000;
+            text-align: left;
+        }
+        &__input::placeholder,
+        &__input:active {
+            size: 12px;
+            color: $nav-title-color;
+        }
+        &__search-svg {
+            fill: $white-color;
+            transition: transform 0.5s ease;
+            &:hover {
+                fill: lighten($white-color, 1.5);
+                transform: scale(1.2);
+            }
+        }
+        &__main-btn {
+            padding: 6px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        &__main-list {
+            margin: 0;
+            padding: 0;
+            @include flex(flex-start,
+            flex-start,
+            column);
+        }
+        &__main-item {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__main-link {
+            @include text($big-size,
+            400,
+            $nav-title-color);
+            padding: 5px 15px 5px 20px;
+            transition: all 0.5s ease;
+            &:hover {
+                text-decoration: none;
+                color: $white-color;
+                background-color: rgba($section-bg-color, 0.6);
+            }
+        }
+        &__main-col-right {
+            flex: 1;
+            padding: 30px 50px;
+        }
+        &__movie-card {
+            background-color: rgba($section-bg-color, 0.6);
+            border-radius: 10px;
+        }
+        &__movie-title {
+            @include text($big-size,
+            400,
+            $white-color);
+        }
+        &__movie-poster {
+            margin-bottom: 15px;
         }
     }
-    &__rating {
-        @include flex(flex-end,
-        flex-end);
-    }
-    &__rating-value {
-        @include text($large-size,
-        400,
-        $yellow-color);
-    }
-    &__max-rating-value {
-        @include text($middle-size,
-        400,
-        $white-color);
-    }
-}

@@ -120,35 +120,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"tabs.js":[function(require,module,exports) {
 $(document).ready(function () {
   $('ul.tabs li').click(function () {
-    var tab_id = $(this).attr('data-tab');
+    const tab_id = $(this).attr('data-tab');
     $('ul.tabs li').removeClass('current');
     $('.tab-content').removeClass('current');
     $(this).addClass('current');
     $("#" + tab_id).addClass('current');
   });
 });
-var progressBarOptions = {
+const progressBarOptions = {
   startAngle: -1.55,
   size: 70,
   value: 0.78,
   fill: {
-    gradient: ['#00d4be', '#1ae77f']
+    gradient: ['#00d4be', '#1ae77f', '#57E86B']
   }
 };
 $('.circle').circleProgress(progressBarOptions).on('circle-animation-progress', function (event, progress, stepValue) {
-  $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2));
+  $(this).find('strong').text(parseFloat(stepValue * 10).toFixed(1));
 });
 $('.tabs').on('click', function () {
   $('#circle-a').circleProgress({
     value: 0.78,
     fill: {
-      gradient: ['#00d4be', '#1ae77f']
+      gradient: ['#00d4be', '#1ae77f', '#57E86B']
     }
   });
   $('#circle-b').circleProgress({
     value: 0.55,
     fill: {
-      gradient: ['#00d4be', '#1ae77f']
+      gradient: ['#57E86B', '#A9F36A', '#FEFE69']
     }
   });
   $('#circle-c').circleProgress({
@@ -186,7 +186,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61335" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51987" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

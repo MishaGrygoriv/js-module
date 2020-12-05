@@ -165,6 +165,16 @@ ul {
 .section__rating-item:last-child {
   margin-right: 0;
 }
+.section__rating-svg {
+  fill: #ffdd3f;
+  transition: all 0.2s ease;
+}
+.section__rating-svg:hover {
+  fill: #ffdd3f;
+}
+.section__rating-svg--grey {
+  fill: #4b536b;
+}
 .section__col-second {
   flex-basis: 306px;
 }

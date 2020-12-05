@@ -20,13 +20,14 @@ const progressBarOptions = {
     fill: {
         gradient: [
             '#00d4be',
-            '#1ae77f'
+            '#1ae77f',
+            '#57E86B'
         ]
     }
 }
 
 $('.circle').circleProgress(progressBarOptions).on('circle-animation-progress', function(event, progress, stepValue) {
-    $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2));
+    $(this).find('strong').text(parseFloat(stepValue * 10).toFixed(1));
 });
 
 $('.tabs').on('click', function() {
@@ -35,7 +36,8 @@ $('.tabs').on('click', function() {
         fill: {
             gradient: [
                 '#00d4be',
-                '#1ae77f'
+                '#1ae77f',
+                '#57E86B'
             ]
         }
     });
@@ -44,11 +46,12 @@ $('.tabs').on('click', function() {
         value: 0.55,
         fill: {
             gradient: [
-                '#00d4be',
-                '#1ae77f'
+                '#57E86B',
+                '#A9F36A',
+                '#FEFE69'
             ]
         }
-    });
+    })
 
     $('#circle-c').circleProgress({
         value: 0.97,
